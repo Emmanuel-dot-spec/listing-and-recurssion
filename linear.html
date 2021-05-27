@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Sub question for loop and recursion -->
+    <!-- Now what’s better?
+
+Prcatically, the loop is more effective. These two do the same, but the loop does not spend resources for nested function calls.
+
+From the other side, the recursive variant is shorter and sometimes easier to understand. -->
+
+
+
+
+
+
+    <script>
+        // Loop Method
+        let list = {
+            value: 1,
+            next: {
+                value: 2,
+                next: {
+                    value: 3,
+                    next: {
+                        value: 4,
+                        next: null
+                    }
+                }
+            }
+        };
+
+        function printList(list) {
+            let tmp = list;
+
+            while (tmp) {
+                alert(tmp.value);
+                tmp = tmp.next;
+                //  the role of tmp is exclusively a list traversal, like i in the for loop.
+            }
+
+        }
+
+        printList(list);
+
+        // Kindly comment out the preceeding code of the loop to read the that of the recursion
+
+
+        // Recursive solution
+        let list = {
+            value: 1,
+            next: {
+                value: 2,
+                next: {
+                    value: 3,
+                    next: {
+                        value: 4,
+                        next: null
+                    }
+                }
+            }
+        };
+
+        function printList(list) {
+
+            alert(list.value); // output the current item
+
+            if (list.next) {
+                printList(list.next); // do the same for the rest of the list
+            }
+
+        }
+
+        printList(list);
+    </script>
+</body>
+
+</html>

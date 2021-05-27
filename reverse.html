@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Reverse Order solution -->
+
+
+
+    <script>
+        // Using a recursion
+        let list = {
+            value: 1,
+            next: {
+                value: 2,
+                next: {
+                    value: 3,
+                    next: {
+                        value: 4,
+                        next: null
+                    }
+                }
+            }
+        };
+
+        function oppositeList(list) {
+
+            if (list.next) {
+                oppositeList(list.next);
+            }
+
+            alert(list.value);
+            console.log(list.value);
+
+        }
+
+        oppositeList(list);
+
+
+        // Kindly comment out the preceeding code of the recursion to read the that of the loop
+
+        // Using a Loop
+        let list = {
+            value: 1,
+            next: {
+                value: 2,
+                next: {
+                    value: 3,
+                    next: {
+                        value: 4,
+                        next: null
+                    }
+                }
+            }
+        };
+
+        function inverseList(list) {
+            let arr = [];
+            let tmp = list;
+
+            while (tmp) {
+                arr.push(tmp.value);
+                tmp = tmp.next;
+            }
+
+            for (let i = arr.length - 1; i >= 0; i--) {
+                alert(arr[i]);
+                console.log(arr[i]);
+            }
+        }
+
+        inverseList(list);
+    </script>
+</body>
+
+</html>
